@@ -23,23 +23,19 @@
       <p>Hi, I’m Reza. This site is a small space to share a few things I’ve worked on and what I’m learning along the way.</p>
       <p>If you’re exploring ways AI could improve your workflows—or just want to chat ideas—feel free to reach out.</p>
 
-
-
     </section>
 
-<section id="about" class="container section">
-  <h2>About</h2>
-  <p>I’ve always been drawn to technology that feels a little bit like magic. It started with video games, turned into an engineering degree, and somewhere along the way led me to virtual reality and AI.</p>
-  <p>These days I work in the world of XR and automation — building and experimenting with small, useful AI systems that make everyday work faster and smarter. Things like signal finders, proposal generators, and customer support agents that actually save time instead of creating more of it.</p>
-  <p>I like solving problems without overcomplicating them. I like talking to people about what they’re building. And if you’re curious about how AI could make your work better, I’d love to chat.</p>
-</section>
-
+    <section id="about" class="container section">
+      <h2>About</h2>
+      <p>I’ve always been drawn to technology that feels a little bit like magic. It started with video games, turned into an engineering degree, and somewhere along the way led me to virtual reality and AI.</p>
+      <p>These days I work in the world of XR and automation — building and experimenting with small, useful AI systems that make everyday work faster and smarter. Things like signal finders, proposal generators, and customer support agents that actually save time instead of creating more of it.</p>
+      <p>I like solving problems without overcomplicating them. I like talking to people about what they’re building. And if you’re curious about how AI could make your work better, I’d love to chat.</p>
+    </section>
 
     <section id="projects" class="container section">
       <h2>Projects</h2>
-      <p class="muted">An area I’ll fill with videos, screenshots, and short write‑ups of projects I’ve worked on.</p>
+      <p class="muted">An area I’ll fill with videos, screenshots, and short write-ups of projects I’ve worked on.</p>
 
-      <!-- Placeholder project cards for future content -->
       <div class="grid">
         <article class="card placeholder">
           <div class="card-body">
@@ -62,9 +58,31 @@
       </div>
     </section>
 
+    <!-- New Chat Section (between Projects and Contact) -->
+    <section id="chat" class="container section">
+      <h2>Chat</h2>
+      <div class="chat-panel" aria-label="Conversation">
+        <div class="chat-messages" id="chat-messages">
+          <div class="msg bot">Hi! This space will become a lightweight assistant that knows my projects, contact info, and availability.</div>
+        </div>
+        <form class="chat-input" id="chat-form">
+          <input
+            id="chat-text"
+            type="text"
+            inputmode="text"
+            autocomplete="off"
+            placeholder="How can I help?"
+            aria-label="Message input"
+          />
+          <button type="submit" class="send-btn" aria-label="Send message">Send</button>
+        </form>
+      </div>
+      <p class="chat-note muted">For now this is a demo: type anything and you’ll see a “coming soon...” reply. The plan is to connect it to an LLM that can answer questions about my work and help book meetings.</p>
+    </section>
+
     <section id="contact" class="container section">
       <h2>Contact</h2>
-      <p>Email <a href="mailto:hello@thirdcoastai.com">hello@thirdcoastai.com</a></p>
+      <p>Email <a href="mailto:reza@thirdcoastai.com">reza@thirdcoastai.com</a></p>
     </section>
   </main>
 
@@ -74,6 +92,31 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Minimal client-side chat demo
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('chat-text');
+    const messages = document.getElementById('chat-messages');
+
+    function addMsg(text, who='user') {
+      const div = document.createElement('div');
+      div.className = 'msg ' + (who === 'user' ? 'user' : 'bot');
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text) return;
+      addMsg(text, 'user');
+      input.value = '';
+      setTimeout(() => addMsg('coming soon...', 'bot'), 350);
+    });
+  </script>
 </body>
 </html>
