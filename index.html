@@ -4,62 +4,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Third Coast AI</title>
-  <meta name="description" content="Practical AI systems, simply delivered." />
+  <meta name="description" content="Reza Pahl — projects and notes on practical AI." />
   <meta property="og:title" content="Third Coast AI" />
-  <meta property="og:description" content="Practical AI systems, simply delivered." />
+  <meta property="og:description" content="Reza Pahl — projects and notes on practical AI." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'><text y='50%' x='50%' dominant-baseline='middle' text-anchor='middle' font-size='160'>⚙️</text></svg>">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="container header">
-    <nav class="nav">
-      <a href="#top" class="brand">Third Coast AI</a>
-      <div class="nav-right">
-        <a href="#about">About</a>
-        <a href="#work">What we do</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Third Coast AI</h1>
+    </div>
   </header>
 
   <main id="top">
-    <section class="hero container">
-      <h1>Practical AI, simply delivered.</h1>
-      <p>We help teams ship real value with small, dependable AI systems. No hype—just outcomes.</p>
-      <div class="cta-row">
-        <a class="btn" href="mailto:hello@thirdcoastai.com">Get in touch</a>
+    <section class="container lead">
+      <p>Hi, I’m Reza. This site is a small space to share a few things I’ve worked on and what I’m learning along the way.</p>
+      <p>If you’re exploring ways AI could improve your workflows—or just want to chat ideas—feel free to reach out.</p>
+
+
+
+    </section>
+
+<section id="about" class="container section">
+  <h2>About</h2>
+  <p>I’ve always been drawn to technology that feels a little bit like magic. It started with video games, turned into an engineering degree, and somewhere along the way led me to virtual reality and AI.</p>
+  <p>These days I work in the world of XR and automation — building and experimenting with small, useful AI systems that make everyday work faster and smarter. Things like signal finders, proposal generators, and customer support agents that actually save time instead of creating more of it.</p>
+  <p>I like solving problems without overcomplicating them. I like talking to people about what they’re building. And if you’re curious about how AI could make your work better, I’d love to chat.</p>
+</section>
+
+
+    <section id="projects" class="container section">
+      <h2>Projects</h2>
+      <p class="muted">An area I’ll fill with videos, screenshots, and short write‑ups of projects I’ve worked on.</p>
+
+      <!-- Placeholder project cards for future content -->
+      <div class="grid">
+        <article class="card placeholder">
+          <div class="card-body">
+            <h3>Coming soon</h3>
+            <p>Case studies and demos will live here.</p>
+          </div>
+        </article>
+        <article class="card placeholder">
+          <div class="card-body">
+            <h3>Coming soon</h3>
+            <p>Videos, images, links to docs, and notes.</p>
+          </div>
+        </article>
+        <article class="card placeholder">
+          <div class="card-body">
+            <h3>Coming soon</h3>
+            <p>Small, useful AI workflows — no fluff.</p>
+          </div>
+        </article>
       </div>
-    </section>
-
-    <section id="about" class="container section">
-      <h2>About</h2>
-      <p>Third Coast AI is a small studio based in Chicago. We design, build, and iterate AI workflows that save time and money—starting with the smallest thing that works.</p>
-    </section>
-
-    <section id="work" class="container section">
-      <h2>What we do</h2>
-      <ul class="checklist">
-        <li>Automation: inbox triage, report generation, ticket routing</li>
-        <li>Retrieval: search over docs, SOPs, and knowledge bases</li>
-        <li>Agents: narrow, reliable task bots with guardrails</li>
-        <li>Analytics: ROI tracking and experiment design</li>
-      </ul>
     </section>
 
     <section id="contact" class="container section">
       <h2>Contact</h2>
-      <p>Email <a href="mailto:hello@thirdcoastai.com">hello@thirdcoastai.com</a>. That’s it—no forms, no friction.</p>
+      <p>Email <a href="mailto:hello@thirdcoastai.com">hello@thirdcoastai.com</a></p>
     </section>
   </main>
 
-  <footer class="container footer">
-    <p>© <span id="y"></span> Third Coast AI · Chicago, IL</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> Third Coast AI · Chicago, IL</p>
+    </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
