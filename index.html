@@ -132,7 +132,7 @@
       messages.scrollTop = messages.scrollHeight;
     }
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const text = input.value.trim();
       if (!text) return;
