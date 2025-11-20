@@ -138,7 +138,16 @@
       if (!text) return;
       addMsg(text, 'user');
       input.value = '';
-      setTimeout(() => addMsg('coming soon...', 'bot'), 350);
+      // Send message to your serverless API route
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        body: JSON.stringify({ message: text })
+      });
+      
+      // Read reply from backend
+      const data = await res.json();
+      addMsg(data.reply, 'bot');
+
     });
   </script>
 </body>
